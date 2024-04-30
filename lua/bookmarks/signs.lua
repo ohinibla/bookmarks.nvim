@@ -34,6 +34,7 @@ function M:add(bufnr, signs)
          isExt = false
          local cs = cfg[s.type]
          local text = s.text or cs.text
+         local anno_text = s.anno_text and s.anno_text or ""
 
          api.nvim_buf_set_extmark(bufnr, self.ns, s.lnum - 1, -1, {
             id = s.lnum,
@@ -42,6 +43,8 @@ function M:add(bufnr, signs)
             sign_hl_group = cs.hl,
             number_hl_group = config.numhl and cs.numhl or nil,
             line_hl_group = config.linehl and cs.linehl or nil,
+            virt_text = { { "<-- " .. anno_text .. "      " .. "                             ", "Define" } },
+            virt_text_pos = "right_align",
          })
       end
    end

@@ -103,6 +103,7 @@ M.bookmark_ann = function()
       local line = api.nvim_buf_get_lines(bufnr, lnum - 1, lnum, false)[1]
       signs:remove(bufnr, lnum)
       local text = config.keywords[string.sub(answer or "", 1, 2)]
+      signlines[1]["anno_text"] = answer
       if text then
          signlines[1]["text"] = text
       end
