@@ -43,7 +43,7 @@ function M:add(bufnr, signs)
             sign_hl_group = cs.hl,
             number_hl_group = config.numhl and cs.numhl or nil,
             line_hl_group = config.linehl and cs.linehl or nil,
-            virt_text = { { "<-- " .. anno_text .. "      " .. "                             ", "Define" } },
+            virt_text = { { "<-- " .. anno_text .. " (  ) ", "Define" } },
             virt_text_pos = "right_align",
          })
       end

@@ -180,6 +180,7 @@ M.refresh = function(bufnr)
          local ma = {
             type = v.a and "ann" or "add",
             lnum = tonumber(k),
+            anno_text = v.a and v.a or ""
          }
          local pref = string.sub(v.a or "", 1, 2)
          local text = config.keywords[pref]
